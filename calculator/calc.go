@@ -7,13 +7,17 @@ import (
 )
 
 type operation struct {
-	op       byte
+	// 操作符
+	op byte
+	// 操作符优先级
 	priority int
 }
 
 func Calculate(s string) int {
 	var b bytes.Buffer
 
+	// 处理负数的情况
+	// 在-1的前面加一个0即可
 	for i := 0; i < len(s); i++ {
 		if (s[i] == '-' || s[i] == '+') && (i == 0 || s[i-1] == '(') {
 			b.WriteByte('0')
@@ -22,17 +26,21 @@ func Calculate(s string) int {
 	}
 	b.WriteByte('+')
 	str := b.String()
+	// 实现两个栈，一个放数字，一个放操作数
 	numStack := stack.Construct()
 	opStack := stack.Construct()
 
+	// 存放优先级
 	hash := make(map[byte]int, 0)
 	hash['+'] = 1
 	hash['-'] = 1
 	hash['*'] = 2
 	hash['/'] = 2
 
+	// 定义优先级
 	prio := 0
 	for i := 0; i < len(str); i++ {
+		// 空格跳过
 		if str[i] == ' ' {
 			continue
 		}
@@ -61,6 +69,7 @@ func Calculate(s string) int {
 		} else if str[i] == ')' {
 			prio -= 10
 		} else {
+			// 如果是数字，且是连续数字拼接
 			tmp := string(str[i])
 			for str[i+1] >= '0' && str[i+1] <= '9' {
 				tmp += string(str[i+1])
