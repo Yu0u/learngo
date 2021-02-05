@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f95e92c-1a60-4450-ab2e-b6badf3a2f64" name="Default Changelist" comment="单例在1中体现">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator/calc.go" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/calc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/ArrayList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/ArrayList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/LinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/LinkedList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,8 +108,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/demo/ArrayList.go</url>
-          <line>19</line>
-          <option name="timeStamp" value="3" />
+          <line>22</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

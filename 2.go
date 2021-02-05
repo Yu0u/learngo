@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 定义一个fib函数，函数返回值为匿名函数
+// 定义一个fib函数，函数返回值为匿名函数,匿名函数的返回值为int
 func fib() func(int) int {
 	a, b := 0, 1
 	return func(i int) int {
@@ -18,6 +18,7 @@ func main() {
 	f := fib()
 	for i := 0; i < 50; i++ {
 		// 传递i过去只是为了输出0
+		// 调用了50次fib函数
 		fmt.Print(f(i), " ")
 	}
 }

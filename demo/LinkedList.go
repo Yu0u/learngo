@@ -16,11 +16,8 @@ type LinkedList struct {
 	length int
 }
 
-func (l *LinkedList) InitLinkedList() {
-	l.head = new(Node)
-	l.head.Next = l.head
-	l.head.Prior = l.head
-	l.length = 0
+func NewLinkedList() *LinkedList {
+	return &LinkedList{length: 0}
 }
 
 // 向list末尾加入元素
@@ -57,6 +54,7 @@ func (l *LinkedList) AddFromHead(obj ...interface{}) *Node {
 	return node
 }
 
+// 通过遍历找到location，并插入
 func (l *LinkedList) Insert(location int, obj interface{}) error {
 	if location < 0 {
 		return errors.New("Index should be greater than 0 ")
@@ -81,6 +79,7 @@ func (l *LinkedList) Insert(location int, obj interface{}) error {
 	return nil
 }
 
+// 通过遍历找到值，并修改
 func (l *LinkedList) Set(location int, obj interface{}) error {
 	if location < 0 {
 		return errors.New("Index should be greater than 0 ")
@@ -107,10 +106,12 @@ func (l *LinkedList) Contain(obj interface{}) bool {
 	return false
 }
 
+// 头节点为空则为空
 func (l *LinkedList) IsEmpty() bool {
 	return l.head == nil
 }
 
+// 遍历查值
 func (l *LinkedList) Get(location int) (interface{}, error) {
 	if location < 0 {
 		return nil, errors.New("Index should be greater than 0 ")
@@ -125,11 +126,15 @@ func (l *LinkedList) Get(location int) (interface{}, error) {
 	}
 }
 
+//
 func (l *LinkedList) Equals(list List) bool {
 	flag := true
 	cur := l.head
 	i := 1
 	var j interface{}
+	if l.Size() > list.Size() || l.Size() < list.Size() {
+		return false
+	}
 	for cur != nil {
 		j, _ = list.Get(i)
 		i++
@@ -139,17 +144,14 @@ func (l *LinkedList) Equals(list List) bool {
 			flag = true
 			cur = cur.Next
 		}
-		if i > l.length {
-			return false
-		}
-
 	}
 	return flag
 }
 
+// 通过遍历将数据转换为slice
 func (l *LinkedList) ToSlice() []interface{} {
 	cur := l.head
-	s := make([]interface{}, 1)
+	s := make([]interface{}, 0)
 	for cur != nil {
 		s = append(s, cur.Data)
 		cur = cur.Next
@@ -161,6 +163,7 @@ func (l *LinkedList) Size() int {
 	return l.length
 }
 
+// 测试用
 func (l *LinkedList) Print() {
 	cur := l.head
 	for cur != nil {

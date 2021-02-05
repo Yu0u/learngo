@@ -49,6 +49,7 @@ func Calculate(s string) int {
 			for !opStack.Empty() && opStack.Peek().(operation).priority >= oper.priority {
 				op := opStack.Pop().(operation).op
 				cur := 0
+				// 将栈顶两数出栈，并进行计算
 				b := numStack.Pop().(int)
 				a := numStack.Pop().(int)
 				switch op {
@@ -61,6 +62,7 @@ func Calculate(s string) int {
 				case '/':
 					cur = a / b
 				}
+				// 计算结果入栈
 				numStack.Push(cur)
 			}
 			opStack.Push(oper)
@@ -69,7 +71,7 @@ func Calculate(s string) int {
 		} else if str[i] == ')' {
 			prio -= 10
 		} else {
-			// 如果是数字，且是连续数字拼接
+			// 如果是数字，且是连续数字 拼接
 			tmp := string(str[i])
 			for str[i+1] >= '0' && str[i+1] <= '9' {
 				tmp += string(str[i+1])
