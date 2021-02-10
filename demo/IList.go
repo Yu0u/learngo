@@ -19,4 +19,6 @@ type List interface {
 	ToSlice() []interface{}
 	//输出当前list的长度
 	Size() int
+	//迭代器
+	Iterator() Iterator
 }

@@ -6,14 +6,42 @@ import (
 )
 
 type Node struct {
-	Data  interface{}
-	Prior *Node
-	Next  *Node
+	Data interface{}
+	Next *Node
 }
 
 type LinkedList struct {
 	head   *Node
 	length int
+}
+
+type LinkedListIterator struct {
+	list         *LinkedList
+	currentIndex int
+}
+
+func (l *LinkedListIterator) HasNext() bool {
+	return l.currentIndex < l.list.Size()
+}
+
+func (l *LinkedListIterator) Next() (interface{}, error) {
+	if !l.HasNext() {
+		return nil, errors.New("Not have next element ")
+	}
+	value, err := l.list.Get(l.currentIndex)
+	l.currentIndex++
+	return value, err
+}
+
+func (l *LinkedListIterator) getIndex() int {
+	return l.currentIndex
+}
+
+func (l *LinkedList) Iterator() Iterator {
+	iterator := new(LinkedListIterator)
+	iterator.currentIndex = 1
+	iterator.list = l
+	return iterator
 }
 
 func NewLinkedList() *LinkedList {
@@ -128,23 +156,17 @@ func (l *LinkedList) Get(location int) (interface{}, error) {
 
 //
 func (l *LinkedList) Equals(list List) bool {
-	flag := true
-	cur := l.head
-	i := 1
-	var j interface{}
-	if l.Size() > list.Size() || l.Size() < list.Size() {
-		return false
-	}
-	for cur != nil {
-		j, _ = list.Get(i)
-		i++
-		if cur.Data != j {
-			return false
-		} else {
+	flag := false
+	iterator1 := list.Iterator()
+	iterator2 := l.Iterator()
+	for iterator1.HasNext() && iterator2.HasNext() {
+		o1, _ := iterator1.Next()
+		o2, _ := iterator2.Next()
+		if o1 == o2 {
 			flag = true
-			cur = cur.Next
 		}
 	}
+	flag = !(iterator1.HasNext() || iterator2.HasNext())
 	return flag
 }
 

@@ -10,8 +10,48 @@ type ArrayList struct {
 	size int
 }
 
-func NewArrayList() *ArrayList {
+func (a *ArrayList) Len() int {
+	return a.Size()
+}
 
+func (a *ArrayList) Less(i, j int) bool {
+	return a.data[i].(int) < a.data[j].(int)
+}
+
+func (a *ArrayList) Swap(i, j int) {
+	a.data[i], a.data[j] = a.data[j], a.data[i]
+}
+
+type ArrayListIterator struct {
+	list         *ArrayList
+	currentIndex int
+}
+
+func (a *ArrayList) Iterator() Iterator {
+	iterator := new(ArrayListIterator)
+	iterator.currentIndex = 0
+	iterator.list = a
+	return iterator
+}
+
+func (a *ArrayListIterator) HasNext() bool {
+	return a.currentIndex < a.list.Size()
+}
+
+func (a *ArrayListIterator) Next() (interface{}, error) {
+	if !a.HasNext() {
+		return nil, errors.New("Not have next element ")
+	}
+	value, err := a.list.Get(a.currentIndex)
+	a.currentIndex++
+	return value, err
+}
+
+func (a *ArrayListIterator) getIndex() int {
+	return a.currentIndex
+}
+
+func NewArrayList() *ArrayList {
 	// 分配一个容量为0的切片，
 	// 如果切片容量不为零，则会在切片初始分配后添加
 	return &ArrayList{
@@ -75,21 +115,17 @@ func (a *ArrayList) Get(location int) (interface{}, error) {
 }
 
 func (a *ArrayList) Equals(list List) bool {
-	flag := true
-	var j interface{}
-	// 如果要比较的ArrayList list.size 大于 a.size 则直接返不相等
-	if list.Size() > a.Size() || list.Size() < a.Size() {
-		flag = false
-	}
-	// 通过list的 get 方法得到值并进行比较
-	for i := 0; i < a.size; i++ {
-		j, _ = list.Get(i)
-		if a.data[i] != j {
-			return false
-		} else {
+	flag := false
+	iterator1 := list.Iterator()
+	iterator2 := a.Iterator()
+	for iterator1.HasNext() && iterator2.HasNext() {
+		o1, _ := iterator1.Next()
+		o2, _ := iterator2.Next()
+		if o1 == o2 {
 			flag = true
 		}
 	}
+	flag = !(iterator1.HasNext() || iterator2.HasNext())
 	return flag
 }
 

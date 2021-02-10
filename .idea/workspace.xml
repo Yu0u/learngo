@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f95e92c-1a60-4450-ab2e-b6badf3a2f64" name="Default Changelist" comment="单例在1中体现">
+      <change afterPath="$PROJECT_DIR$/Factory/factory.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/iterator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lru/LRUcache.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/ArrayList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/ArrayList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/IList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/IList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/LinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/LinkedList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../GO/src/bufio/scan.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../../GO/src/hash/test_cases.txt" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../../GO/src/hash/hash.go" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1nPS7tG3FOS5OaB9W6zv520wXYP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,6 +67,24 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build learngo/Factory" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="learngo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/Factory/factory.go" />
+      <package value="learngo/Factory" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build learngo/e" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="learngo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/e/main.go" />
+      <package value="learngo/e" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build learngo/test" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learngo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -66,20 +94,13 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="learngo" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build learngo/test" />
+        <item itemvalue="Go Build.go build learngo/Factory" />
+        <item itemvalue="Go Build.go build learngo/e" />
         <item itemvalue="Go Build.go build 2.go" />
         <item itemvalue="Go Build.go build 1.go" />
-        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -97,11 +118,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="单例在1中体现" />
     <MESSAGE value="。。。" />
-    <option name="LAST_COMMIT_MESSAGE" value="。。。" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -111,16 +134,5 @@
         <entry key="GOSUMDB" value="off" />
       </map>
     </environment>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/demo/ArrayList.go</url>
-          <line>22</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
