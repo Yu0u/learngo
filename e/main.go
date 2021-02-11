@@ -18,6 +18,7 @@ func main() {
 			}
 		}
 		wg.Done()
+		return
 	}(ch)
 	go func(ch chan int) {
 		for i := 1; i <= 100; i++ {
@@ -27,6 +28,7 @@ func main() {
 			}
 		}
 		wg.Done()
+		return
 	}(ch)
 	wg.Wait()
 }

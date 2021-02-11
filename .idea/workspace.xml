@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f95e92c-1a60-4450-ab2e-b6badf3a2f64" name="Default Changelist" comment="单例在1中体现">
-      <change afterPath="$PROJECT_DIR$/Factory/factory.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/iterator.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lru/LRUcache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/ArrayList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/ArrayList.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/IList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/IList.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/LinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/LinkedList.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.go" afterDir="false" />
-    </list>
+    <list default="true" id="7f95e92c-1a60-4450-ab2e-b6badf3a2f64" name="Default Changelist" comment="增加迭代器，" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +40,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
-  <component name="RunManager" selected="Go Build.go build learngo/test">
+  <component name="RunManager" selected="Go Build.go build learngo/e">
     <configuration name="go build 1.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learngo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -96,9 +86,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build learngo/e" />
         <item itemvalue="Go Build.go build learngo/test" />
         <item itemvalue="Go Build.go build learngo/Factory" />
-        <item itemvalue="Go Build.go build learngo/e" />
         <item itemvalue="Go Build.go build 2.go" />
         <item itemvalue="Go Build.go build 1.go" />
       </list>
@@ -124,7 +114,8 @@
     <MESSAGE value="单例在1中体现" />
     <MESSAGE value="。。。" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="增加迭代器，" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加迭代器，" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
