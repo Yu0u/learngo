@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f95e92c-1a60-4450-ab2e-b6badf3a2f64" name="Default Changelist" comment="增加迭代器，" />
+    <list default="true" id="7f95e92c-1a60-4450-ab2e-b6badf3a2f64" name="Default Changelist" comment="。">
+      <change afterPath="$PROJECT_DIR$/3.1/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ini/conf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ini/conf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ini/test.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/ArrayList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/ArrayList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/LinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/LinkedList.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,57 +50,63 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
-  <component name="RunManager" selected="Go Build.go build learngo/e">
-    <configuration name="go build 1.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="learngo" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/1.go" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build 2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="learngo" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/2.go" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build learngo/Factory" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestINI in learngo/ini (1)">
+    <configuration name="go build learngo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learngo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/Factory/factory.go" />
-      <package value="learngo/Factory" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="learngo" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build learngo/e" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build learngo/3.1" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learngo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/e/main.go" />
-      <package value="learngo/e" />
+      <filePath value="$PROJECT_DIR$/3.1/main.go" />
+      <package value="learngo/3.1" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build learngo/test" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build learngo/student" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learngo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/test/main.go" />
-      <package value="learngo/test" />
+      <filePath value="$PROJECT_DIR$/student/main.go" />
+      <package value="learngo/student" />
       <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestINI in learngo/ini (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="learngo" />
+      <working_directory value="$PROJECT_DIR$/ini" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="learngo/ini" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestINI\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestINI in learngo/ini" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="learngo" />
+      <working_directory value="$PROJECT_DIR$/ini" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="learngo/ini" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestINI\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build learngo/e" />
-        <item itemvalue="Go Build.go build learngo/test" />
-        <item itemvalue="Go Build.go build learngo/Factory" />
-        <item itemvalue="Go Build.go build 2.go" />
-        <item itemvalue="Go Build.go build 1.go" />
+        <item itemvalue="Go Test.TestINI in learngo/ini (1)" />
+        <item itemvalue="Go Test.TestINI in learngo/ini" />
+        <item itemvalue="Go Build.go build learngo" />
+        <item itemvalue="Go Build.go build learngo/student" />
+        <item itemvalue="Go Build.go build learngo/3.1" />
       </list>
     </recent_temporary>
   </component>
@@ -115,7 +131,8 @@
     <MESSAGE value="。。。" />
     <MESSAGE value="1" />
     <MESSAGE value="增加迭代器，" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加迭代器，" />
+    <MESSAGE value="。" />
+    <option name="LAST_COMMIT_MESSAGE" value="。" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

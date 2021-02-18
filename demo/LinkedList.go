@@ -3,6 +3,7 @@ package demo
 import (
 	"errors"
 	"fmt"
+	"sync"
 )
 
 type Node struct {
@@ -13,6 +14,7 @@ type Node struct {
 type LinkedList struct {
 	head   *Node
 	length int
+	lock   sync.Mutex
 }
 
 type LinkedListIterator struct {
@@ -50,6 +52,8 @@ func NewLinkedList() *LinkedList {
 
 // 向list末尾加入元素
 func (l *LinkedList) Add(obj ...interface{}) error {
+	l.lock.Lock()
+	defer l.lock.Unlock()
 	for i := 0; i < len(obj); i++ {
 		node := &Node{Data: obj[i]}
 		if l.IsEmpty() {
@@ -67,8 +71,9 @@ func (l *LinkedList) Add(obj ...interface{}) error {
 }
 
 func (l *LinkedList) AddFromHead(obj ...interface{}) *Node {
+	l.lock.Lock()
+	defer l.lock.Unlock()
 	var node *Node
-
 	for i := 0; i < len(obj); i++ {
 		node = &Node{Data: obj[i]}
 		if l.IsEmpty() {
@@ -84,6 +89,8 @@ func (l *LinkedList) AddFromHead(obj ...interface{}) *Node {
 
 // 通过遍历找到location，并插入
 func (l *LinkedList) Insert(location int, obj interface{}) error {
+	l.lock.Lock()
+	defer l.lock.Unlock()
 	if location < 0 {
 		return errors.New("Index should be greater than 0 ")
 	} else if location <= 1 {
@@ -91,7 +98,6 @@ func (l *LinkedList) Insert(location int, obj interface{}) error {
 	} else if location > l.length+1 {
 		return errors.New("Index out of range ")
 	} else {
-
 		pre := l.head
 		count := 1
 
@@ -109,6 +115,8 @@ func (l *LinkedList) Insert(location int, obj interface{}) error {
 
 // 通过遍历找到值，并修改
 func (l *LinkedList) Set(location int, obj interface{}) error {
+	l.lock.Lock()
+	defer l.lock.Unlock()
 	if location < 0 {
 		return errors.New("Index should be greater than 0 ")
 	} else if location > l.length+1 {
@@ -141,6 +149,8 @@ func (l *LinkedList) IsEmpty() bool {
 
 // 遍历查值
 func (l *LinkedList) Get(location int) (interface{}, error) {
+	l.lock.Lock()
+	defer l.lock.Unlock()
 	if location < 0 {
 		return nil, errors.New("Index should be greater than 0 ")
 	} else if location > l.length {
@@ -150,7 +160,8 @@ func (l *LinkedList) Get(location int) (interface{}, error) {
 		for i := 0; i < (location - 1); i++ {
 			cur = cur.Next
 		}
-		return cur.Data, nil
+		data := cur.Data
+		return data, nil
 	}
 }
 

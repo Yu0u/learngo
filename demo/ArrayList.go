@@ -3,23 +3,13 @@ package demo
 import (
 	"errors"
 	"fmt"
+	"sync"
 )
 
 type ArrayList struct {
 	data []interface{}
 	size int
-}
-
-func (a *ArrayList) Len() int {
-	return a.Size()
-}
-
-func (a *ArrayList) Less(i, j int) bool {
-	return a.data[i].(int) < a.data[j].(int)
-}
-
-func (a *ArrayList) Swap(i, j int) {
-	a.data[i], a.data[j] = a.data[j], a.data[i]
+	lock sync.Mutex
 }
 
 type ArrayListIterator struct {
@@ -61,6 +51,8 @@ func NewArrayList() *ArrayList {
 }
 
 func (a *ArrayList) Add(obj ...interface{}) error {
+	a.lock.Lock()
+	defer a.lock.Unlock()
 	for _, v := range obj {
 		a.data = append(a.data, v)
 		a.size++
@@ -69,20 +61,22 @@ func (a *ArrayList) Add(obj ...interface{}) error {
 }
 
 func (a *ArrayList) Insert(location int, obj interface{}) error {
+	a.lock.Lock()
+	defer a.lock.Unlock()
 	if location < 0 || location >= a.size {
 		return errors.New("Index out of range ")
 	}
-
 	// 将从location开始的元素存到一个辅助切片中
 	rear := append([]interface{}{}, a.data[location:]...)
 	// 先将需要插入的元素插入到location之前，然后再将rear切片插入到要插入元素的后面
 	a.data = append(append(a.data[:location], obj), rear...)
 	a.size++
-
 	return nil
 }
 
 func (a *ArrayList) Set(location int, obj interface{}) error {
+	a.lock.Lock()
+	defer a.lock.Unlock()
 	if location < 0 || location >= a.size {
 		return errors.New("Index out of range ")
 	}
@@ -107,11 +101,14 @@ func (a *ArrayList) IsEmpty() bool {
 }
 
 func (a *ArrayList) Get(location int) (interface{}, error) {
+	a.lock.Lock()
+	defer a.lock.Unlock()
 	if location < 0 || location >= a.size {
 		return nil, errors.New("Index out of range ")
 	}
 	// 根据索引查找值
-	return a.data[location], nil
+	i := a.data[location]
+	return i, nil
 }
 
 func (a *ArrayList) Equals(list List) bool {
